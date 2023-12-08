@@ -18,6 +18,7 @@ window.addEventListener('load', function() {
 	  this.size = 4; /* this.effect.gap; */
 	  this.vx = 0;  /* Math.random() * 2 - 1; */
 	  this.vy = 0;   /* Math.random() * 2 - 1; */
+	  this.ease = 0.03;
     }
 
 	draw(context) {
@@ -26,8 +27,8 @@ window.addEventListener('load', function() {
 	}
 
 	update() {
-	  this.x += (this.originX - this.x) * 0.03;  /* 0.1 is to slow the position change from the constant run of update */
-	  this.y += (this.originY - this.y);
+	  this.x += (this.originX - this.x) * this.ease;  /* 0.1 is to slow the position change from the constant run of update */
+	  this.y += (this.originY - this.y) * this.ease;
 	}
 
   }
